@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { ArrowLeftOutlined, ArrowRightOutlined } from "@material-ui/icons"
 import styled from "styled-components"
+import { sliderItems } from '../data'
 
 
 
@@ -83,36 +84,18 @@ const Slider = () => {
           <ArrowLeftOutlined/>
         </Arrow>
         <Wrapper>
-          <Slide>
-          <ImgContainer>
-          <Image src="https://cdn.shopify.com/s/files/1/0025/7530/2719/products/Machines-AK1cut-min.jpg?v=1634154243" />
-          </ImgContainer>
-          <InfoContainer>
-            <Title>WINTER SALE</Title>
-            <Description>LAST CALL FOR TUFFTING GUNS! GET 30% DISSCOUNT FOR SHIPPING NOW</Description>
-            <Button>SHOW NOW</Button>
-          </InfoContainer>
-          </Slide>
-          <Slide>
-          <ImgContainer>
-          <Image src="https://cdn.shopify.com/s/files/1/0025/7530/2719/products/Machines-AK1cut-min.jpg?v=1634154243" />
-          </ImgContainer>
-          <InfoContainer>
-            <Title>SUMMER SALE</Title>
-            <Description>LAST CALL FOR TUFFTING GUNS! GET 30% DISSCOUNT FOR SHIPPING NOW</Description>
-            <Button>SHOW NOW</Button>
-          </InfoContainer>
-          </Slide>
-          <Slide>
-          <ImgContainer>
-          <Image src="https://cdn.shopify.com/s/files/1/0025/7530/2719/products/Machines-AK1cut-min.jpg?v=1634154243" />
-          </ImgContainer>
-          <InfoContainer>
-            <Title>MID SALE</Title>
-            <Description>LAST CALL FOR TUFFTING GUNS! GET 30% DISSCOUNT FOR SHIPPING NOW</Description>
-            <Button>SHOW NOW</Button>
-          </InfoContainer>
-          </Slide>
+          {sliderItems.map(item=>(
+             <Slide bg={item.bg}>
+             <ImgContainer>
+             <Image src={item.img} />
+             </ImgContainer>
+             <InfoContainer>
+               <Title>{item.title}</Title>
+               <Description>{item.description}</Description>
+               <Button>SHOW NOW</Button>
+             </InfoContainer>
+             </Slide>
+          ))}
         </Wrapper>
         <Arrow direction="right" onClick={()=> handleClick("right")}>
           <ArrowRightOutlined/>
