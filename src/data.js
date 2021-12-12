@@ -51,7 +51,7 @@ export const popularProducts = [
   },
   {
     id: 3,
-    img: 'https://i.ytimg.com/vi/mb74j7dhZs4/maxresdefault.jpg',
+    img: 'https://ae01.alicdn.com/kf/H250482c3548f404491eda5cbd349dce1d/Anime-Hunter-X-Hunter-Rugs-Character-Killua-Special-Shape-Soft-Fluffy-Carpets-for-Living-Room-Cute.jpg_Q90.jpg_.webp',
   },
   {
     id: 4,
@@ -71,6 +71,10 @@ export const popularProducts = [
   },
   {
     id: 8,
-    img: 'https://i.etsystatic.com/32747731/r/il/5b252a/3504916584/il_340x270.3504916584_gf6f.jpg',
+    img: 'https://sc04.alicdn.com/kf/H5b05af4a78864b1da1df6e4d93bf1c4au.jpg',
+  },
+  {
+    id: 9,
+    img: 'https://i.pinimg.com/originals/2d/8b/79/2d8b79deb75f3ba74ae936809c40f316.jpg'
   }
 ]
