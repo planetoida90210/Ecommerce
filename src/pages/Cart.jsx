@@ -3,6 +3,7 @@ import Navbar from '../components/Navbar'
 import Announcement from '../components/Announcement'
 import Footer from '../components/Footer'
 import styled from 'styled-components'
+import { Add, Remove } from '@material-ui/icons'
 
 
 const Container = styled.div`
@@ -56,6 +57,7 @@ const ProductDetail = styled.div`
 `
 const Image = styled.img`
   width: 200px;
+  margin: 10px 0;
 `
 const Details = styled.div`
   padding: 20px;
@@ -74,6 +76,7 @@ const ProductColor = styled.div`
   background-color: ${props=> props.color};
 `
 const ProductSize = styled.span`
+  margin-bottom: 10px;
 `
 const PriceDetail = styled.span`
   flex: 1;
@@ -83,8 +86,53 @@ const PriceDetail = styled.span`
   justify-content: center;
 `
 
+const ProductAmountContainer = styled.div`
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+`
+const ProductAmount = styled.div`
+  font-size: 24;
+  margin: 5px;
+`
+const ProductPrice = styled.div`
+  font-size: 30px;
+  font-weight: 200;
+`
+
+const Hr = styled.hr` 
+  background-color: #eee;
+  border: none;
+  height: 1px;
+`
+
 const Summary = styled.div`
   flex: 1;
+  border: 0.5px solid lightgray;
+  border-radius: 10px;
+  padding: 20px;
+  height: 50vh;
+`
+const SummaryTitle= styled.h1`
+  font-weight: 200;
+`
+const SummaryItem= styled.div`
+  margin: 30px 0px;
+  display: flex;
+  justify-content: space-between;
+  font-weight: ${props=> props.type === "total" && "500"};
+  font-size: ${props=> props.type === "total" && "24px"};
+`
+const SummaryItemText= styled.span``
+const SummaryItemPrice= styled.span``
+const SummaryButton= styled.button`
+  width: 100%;
+  padding: 10px;
+  background-color: black;
+  color: white;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
 `
 
 const Cart = () => {
@@ -115,11 +163,55 @@ const Cart = () => {
              </Details>
            </ProductDetail>
            <PriceDetail>
-             price
+             <ProductAmountContainer>
+               <Add />
+               <ProductAmount>2</ProductAmount>
+               <Remove />
+             </ProductAmountContainer>
+             <ProductPrice>$ 500</ProductPrice>
+           </PriceDetail>
+           </Product>
+           <Hr />
+           <Product>
+           <ProductDetail>
+             <Image src="https://preview.redd.it/qkmro223gs271.jpg?width=640&crop=smart&auto=webp&s=ed58e0a055aba76a8b2de5f28b1a691ecb2ad7b9" />
+             <Details>
+               <ProductName><b>PRODUCT:</b> Rengoku Rug</ProductName>
+               <ProductId><b>ID:</b> 23412</ProductId>
+               <ProductColor color='yellow'/>
+               <ProductSize><b>Size:</b> 70 cm</ProductSize>
+             </Details>
+           </ProductDetail>
+           <PriceDetail>
+             <ProductAmountContainer>
+               <Add />
+               <ProductAmount>2</ProductAmount>
+               <Remove />
+             </ProductAmountContainer>
+             <ProductPrice>$ 500</ProductPrice>
            </PriceDetail>
            </Product>
          </Info>
-         <Summary>summary</Summary>
+         <Summary>
+           <SummaryTitle>ORDER SUMMARY</SummaryTitle>
+           <SummaryItem>
+             <SummaryItemText>Subtotal</SummaryItemText>
+             <SummaryItemPrice>$ 1000</SummaryItemPrice>
+           </SummaryItem>
+           <SummaryItem>
+             <SummaryItemText>Estimated Shipping</SummaryItemText>
+             <SummaryItemPrice>$ 30.50</SummaryItemPrice>
+           </SummaryItem>
+           <SummaryItem>
+             <SummaryItemText>Shipping Discount</SummaryItemText>
+             <SummaryItemPrice>$ -30.50</SummaryItemPrice>
+           </SummaryItem>
+           <SummaryItem type="total">
+             <SummaryItemText>Total</SummaryItemText>
+             <SummaryItemPrice>$ 1000</SummaryItemPrice>
+           </SummaryItem>
+           <SummaryButton>CHECKOUT NOW</SummaryButton>
+         </Summary>
        </Bottom>
       </Wrapper>
      <Footer/>
