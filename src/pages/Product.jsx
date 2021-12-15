@@ -5,6 +5,7 @@ import Announcement from '../components/Announcement'
 import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'
 import Newsletter from '../components/Newsletter'
+import { mobile } from '../responsive'
 
 const Container = styled.div` 
 
@@ -12,6 +13,7 @@ const Container = styled.div`
 const Wrapper = styled.div` 
   padding: 50px;
   display: flex;
+  ${mobile({padding: "10px", flexDirection: "column"})}
 `
 const ImgContainer = styled.div` 
   flex: 1;

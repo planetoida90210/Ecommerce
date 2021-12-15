@@ -60,7 +60,12 @@ const ListItem = styled.li`
 const Right = styled.div`
   flex: 1;
   padding: 20px;
-  ${mobile({display: "flex", flexDirection: "column", alignItems: "center", backgroundColor: "#fff8f8",})};
+  ${mobile({
+    display: "flex", 
+    flexDirection: "column", 
+    alignItems: "center", 
+    backgroundColor: "#fff8f8",
+    })};
 `
 
 const ContactItem = styled.div`
