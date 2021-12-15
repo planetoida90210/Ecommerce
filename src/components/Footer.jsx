@@ -1,15 +1,18 @@
 import { Facebook, Instagram, MailOutline, Phone, Pinterest, Room, Twitter } from '@material-ui/icons'
 import React from 'react'
 import styled from 'styled-components'
+import { mobile } from '../responsive'
 
 const Container = styled.div`
   display: flex;
+  ${mobile({flexDirection: "column"})}
 `
 const Left = styled.div`
   flex: 1;
   display: flex;
   flex-direction: column;
   padding: 20px;
+  ${mobile({alignItems: "center"})}
 `
 
 const Logo = styled.h1`
@@ -35,6 +38,7 @@ const SocialIcon = styled.div`
 const Center = styled.div`
   flex: 1;
   padding: 20px;
+  ${mobile({display: "none"})};
 `
 const Title = styled.h3`
   margin-bottom: 30px;
@@ -56,6 +60,7 @@ const ListItem = styled.li`
 const Right = styled.div`
   flex: 1;
   padding: 20px;
+  ${mobile({display: "flex", flexDirection: "column", alignItems: "center", backgroundColor: "#fff8f8",})};
 `
 
 const ContactItem = styled.div`
