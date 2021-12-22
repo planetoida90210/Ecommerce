@@ -3,7 +3,7 @@ const { verifyToken,
   verifyTokenAndAdmin
  } = require('./verifyToken');
 const Cart = require("../models/Cart")
-const CryptoJS = require("crypto-js");
+
 
 const router = require("express").Router();
 

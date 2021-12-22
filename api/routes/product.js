@@ -1,9 +1,8 @@
-const { verifyToken, 
-  verifyTokenAndAuthorization, 
+const {  
   verifyTokenAndAdmin
  } = require('./verifyToken');
 const Product = require("../models/Product")
-const CryptoJS = require("crypto-js");
+
 
 const router = require("express").Router();
 
@@ -66,7 +65,7 @@ router.get("/", async (req,res)=>{
     let products;
 
     if(queryNew){
-      products = await Product.find().sort({createdAt: -1}).limit(1)
+      products = await Product.find().sort({createdAt: -1}).limit(5)
     } else if(queryCategory){
       products = await Product.find({categories:{
         $in:[queryCategory],
@@ -80,36 +79,4 @@ router.get("/", async (req,res)=>{
   };
 });
 
-
-// // GET USER STATS 
-
-// router.get("/stats", verifyTokenAndAdmin, async (req,res)=> {
-//   const date = new Date();
-//   const lastYear = new Date(date.setFullYear(date.getFullYear() - 1));
-
-//   try {
-    
-//     const data = await User.aggregate([
-//       {$match: {createdAt: {$gte:lastYear} } },
-//       {
-//         $project:{
-//           month: {$month : "$createdAt"},
-//         },
-//       },
-//       {
-//         $group:{
-//           _id: "$month",
-//           total:{$sum:1},
-//         }
-//       },
-//         ]);
-
-//     res.status(200).json(data);
-
-//   } catch (err) {
-//     res.status(500).json(err)
-//   }
-// })
-
- 
 module.exports = router;
